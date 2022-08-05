@@ -20,7 +20,7 @@ This repository shows how the DSAC* can be improved by training GNN to learn the
 # 4 Changing hyperparameters
  * You can also change hyperparameters. See arguments of `main.py` for this.
 
-# 5 Algorithm logic
+# Algorithm logic
 Our idea is a combination of https://arxiv.org/pdf/1905.04132.pdf, https://arxiv.org/pdf/1706.00984.pdf, https://ieeexplore.ieee.org/document/9394752 and https://arxiv.org/pdf/2103.09435.pdf. Here we train the GNN in a self-supervised manner to maximize the expected inlier score. We thank all the authors of these papers for their great work.
 
 # Improvement ideas
