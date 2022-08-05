@@ -6,6 +6,7 @@ This repository shows how the DSAC* can be improved by training GNN to learn the
  * `models/`: It contains GNN and DSAC* network code.
  * `utils/`: It contains hypothesis utils for pose estimation problem, for data and for GNN network training.
  * `main.py`: It contains algorithm logic.
+ * `visu/`: It contains helper functions for the visualization.
 
 # 2 Setting up
  * To download the dataset, run `setup_7scenes.py` inside `dataset` folder.

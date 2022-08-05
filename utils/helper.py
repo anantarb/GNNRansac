@@ -6,6 +6,7 @@ from torch_geometric.utils import from_scipy_sparse_matrix
 from sklearn.neighbors import kneighbors_graph
 import cv2
 import math
+import matplotlib.image as mpimg
 
 
 from models.network import Network
@@ -20,6 +21,7 @@ def get_required_components(file_name, network):
     pose_path[4] = pose_path[4][:-9] + "pose.txt" 
     pose_path = "/".join(pose_path)
     image, gt_pose, focal_length = load_image(file_name, pose_path)
+    img_visu = mpimg.imread(file_name)
     image = image.to(device)
     image = image.unsqueeze(0)
     with torch.no_grad():
@@ -30,7 +32,7 @@ def get_required_components(file_name, network):
     
     camMat = create_cammat(focal_length, float(image.size(3) / 2), float(image.size(2) / 2))
     
-    return features, scene_coordinates, sampling, camMat, gt_pose
+    return features, scene_coordinates, sampling, camMat, gt_pose, img_visu
 
 # loads image and return image, gt_pose and focal length
 def load_image(image_path, gt_pose_path):
